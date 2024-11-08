@@ -78,6 +78,8 @@ char* infix_postfix(char * exp)
 }
 int main()
 {
+    char str[] = "shanu";
+    printf("%s  %d \n ",str ,strlen(str));
     char exp[] = "a+b*(c^d-e)^(f+g*h)-i";
     printf("Infix expression: %s\n", exp);
     printf("Postfix expression: ");
