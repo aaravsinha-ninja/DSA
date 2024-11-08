@@ -123,6 +123,12 @@ int count_leaf(tree*loc)
         return (count_leaf(loc->LC)+count_leaf(loc->RC));
     }
 }
+int count(tree* LOC)
+{
+    if(LOC==NULL)
+        return 0;
+    return 1 + count(LOC->LC) + count(LOC->RC);
+}
 int main()
 {
     preorder(root);
