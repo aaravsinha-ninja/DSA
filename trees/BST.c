@@ -98,6 +98,31 @@ int largest()
     for(;loc->RC!=NULL;loc=loc->RC);
     return loc->data;
 }
+int smallest()
+{
+    if (root==NULL)
+    {
+        printf("tree is empty");
+        return -999;
+    }
+    tree* loc = root;
+    for(;loc->LC!=NULL;loc=loc->LC);
+    return loc->data;
+}
+int count_leaf(tree*loc)
+{
+    if (loc==NULL)
+    {
+        printf("tree is empty");
+        return 0;
+    }
+    else
+    {
+        if(loc->LC==NULL && loc->RC==NULL)
+        return 1;
+        return (count_leaf(loc->LC)+count_leaf(loc->RC));
+    }
+}
 int main()
 {
     preorder(root);
