@@ -32,13 +32,18 @@ void insert_end(struct node** start, int data)
 void insert_pos(struct node** start, int data, int pos)
 {
     struct node* newNode = createNode(data);
-    if ((*start)==NULL)
+    if ((*start)==NULL && pos==1)
     {
         (*start)=newNode;
         return;
     }
+    else if (pos<1 || (*start == NULL && pos > 1))
+    {
+        printf("invalid pos");
+        return;
+    }
     struct node* temp = *start;
-    for(int i = 0; i < pos ; i++)
+    for(int i = 1; i < pos-1 ; i++)
     {
         if (temp->next==NULL)
         {
@@ -49,6 +54,29 @@ void insert_pos(struct node** start, int data, int pos)
     }
     newNode->next=temp->next;
     temp->next=newNode;
+}
+void insert_aft_ele(struct node** start, int data,int ele)
+{
+    struct node* newNode = createNode(data);
+    if((*start)==NULL)
+    {
+        printf("Linked list is empty and element not found");
+        return;
+    }
+    else
+    {
+        struct node* temp =(*start);
+        for (;temp->data!=ele;temp=temp->next)
+        {
+            if (temp->next==NULL)
+            {
+                printf("ele not found");
+                return;
+            }
+        }
+        newNode->next=temp->next;
+        temp->next=newNode;
+    }
 }
 int main()
 {
