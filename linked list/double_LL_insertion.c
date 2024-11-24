@@ -12,6 +12,7 @@ struct node * createNode(int data)
     newNode->data=data;
     newNode->next=NULL;
     newNode->prev=NULL;
+    return newNode;
 }
 void insert_beginning(struct node**start,int data)
 {   

@@ -12,6 +12,7 @@ void push(char data)
     }
     stack[++top]=data;
 }
+
 char pop()
 {
     if (top==-1)
@@ -22,6 +23,7 @@ char pop()
     char x = stack[top--];
     return x;
 }
+
 int is_Matching(char a, char b)
 {
     if ((a == '(' && b == ')') || (a == '{' && b == '}') || (a == '[' && b == ']'))
@@ -30,9 +32,10 @@ int is_Matching(char a, char b)
     }
     else
     {
-    return 0;
+        return 0;
     }
 }
+
 int is_balanced(char *ch)
 {
     char poped;
@@ -60,6 +63,7 @@ int is_balanced(char *ch)
         return 0;
     }
 }
+
 int main()
 {
     char expression[max];

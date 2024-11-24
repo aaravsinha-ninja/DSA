@@ -40,7 +40,10 @@ int dequeue()
     }
     else
     {
-        return queue[f++];
+        int val =  queue[f];
+        if(f==r) f=r=-1;
+        else f++;
+        return;
     }
 }
 void traverse()

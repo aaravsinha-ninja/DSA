@@ -10,6 +10,7 @@ struct node * createNode(int data)
     struct node * newNode = (struct node*)malloc(sizeof(struct node));
     newNode->data=data;
     newNode->next=NULL;
+    return newNode;
 }
 int del_beg(struct node** start)
 {
