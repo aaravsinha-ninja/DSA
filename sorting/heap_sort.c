@@ -31,7 +31,7 @@ void heap_sort(int A[],int n)
     {
         heapify(A,n,i);
     }
-    for (int i = n-1; i > 0; i--)
+    for (int i = n-1; i >= 0; i--)
     {
         swap(A,i,0);
         heapify(A,i,0);

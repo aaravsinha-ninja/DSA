@@ -1,17 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int* insert_sort(int* arr, int* n, int num)
+void insertionSort(int arr[], int n)
 {
-    (*n)++;
-    arr = (int*)realloc(arr, (*n) * sizeof(int));
-    int i;
-    for (i = (*n) - 2; i >= 0 && arr[i] > num; i--)
-    {
-        arr[i + 1] = arr[i];
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
     }
-    arr[i + 1] = num;
-    return arr;
 }
 int main()
 {
